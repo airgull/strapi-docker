@@ -18,6 +18,7 @@ DATABASE_PORT=${DATABASE_PORT:-27017}
 DATABASE_NAME=${DATABASE_NAME:-strapi}
 DATABASE_SRV=${DATABASE_SRV:-false}
 EXTRA_ARGS=${EXTRA_ARGS:-}
+DEV_MODE=${DEV_MODE:-}
 
 if [ ! -f "$APP_NAME/package.json" ]
 then
@@ -28,8 +29,13 @@ then
 fi
 
 cd $APP_NAME
+
+if [ "$DEV_MODE" = true ] ; then
+npm run develop
+else
 npm run build
 npm run start
+fi
 
 strapiPID=$!
 wait "$strapiPID"
