@@ -28,7 +28,8 @@ then
 fi
 
 cd $APP_NAME
-strapi start &
+npm run build
+npm run start
 
 strapiPID=$!
 wait "$strapiPID"
