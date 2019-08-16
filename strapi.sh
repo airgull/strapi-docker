@@ -30,6 +30,9 @@ fi
 
 cd $APP_NAME
 
+if [ "$UPDATE_MODE" = true ] ; then
+npm update
+fi
 if [ "$DEV_MODE" = true ] ; then
 npm run develop
 else

@@ -1,4 +1,4 @@
-# [Strapi](https://github.com/strapi/strapi) containerized
+# [Strapi](https://github.com/strapi/strapi) containerized updated to Beta
 
 ![Strapi](https://cldup.com/7umchwdUBh.png)
 
@@ -7,9 +7,8 @@ The most advanced open-source Content Management Framework to build powerful API
 
 ***
 
-[![Travis](https://img.shields.io/travis/strapi/strapi-docker.svg?style=for-the-badge)](https://travis-ci.org/strapi/strapi-docker)
-[![GitHub release](https://img.shields.io/github/release/strapi/strapi-docker.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker/releases)
-[![Docker Pulls](https://img.shields.io/docker/pulls/strapi/strapi.svg?style=for-the-badge)](https://hub.docker.com/r/strapi/strapi)
+[![GitHub release](https://img.shields.io/github/release/strapi/strapi.svg?style=for-the-badge)](https://github.com/strapi/strapi-docker/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/mindsaver/strapi-beta)](https://hub.docker.com/r/mindsaver/strapi-beta)
 
 ## Quickstart (recommended)
 
@@ -69,3 +68,6 @@ FROM strapi/strapi
 - `DATABASE_SRV` boolean for SRV.
 - `DATABASE_SSL` boolean for SSL.
 - `DATABASE_AUTHENTICATION_DATABASE` set the authentification.
+- `DEV_MODE` boolean to start the app in dev mode.
+- `UPDATE_MODE` boolean to run npm update.
+
