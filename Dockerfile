@@ -26,8 +26,10 @@ RUN apk add --no-cache \
 
 RUN npm install -g strapi@beta
 
-COPY strapi.sh ./
-RUN chmod +x ./strapi.sh
+RUN strapi new strapi-app --dbclient=mongo --dbhost=strapi-mongo --dbport=27017 --dbsrv=false --dbname=strapi --dbusername= --dbpassword= 
+
+COPY start.sh ./
+RUN chmod +x ./start.sh
 
 EXPOSE 1337
 
@@ -35,4 +37,4 @@ COPY healthcheck.js ./
 HEALTHCHECK --interval=15s --timeout=5s --start-period=30s \
       CMD node /usr/src/api/healthcheck.js
 
-CMD ["./strapi.sh"]
+CMD ["./start.sh"]
