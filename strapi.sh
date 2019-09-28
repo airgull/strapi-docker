@@ -19,6 +19,9 @@ DATABASE_NAME=${DATABASE_NAME:-strapi}
 DATABASE_SRV=${DATABASE_SRV:-false}
 EXTRA_ARGS=${EXTRA_ARGS:-}
 DEV_MODE=${DEV_MODE:-}
+NPM_REGISTRY=${NPM_REGISTRY:-https://registry.npm.taobao.org}
+
+npm set registry ${NPM_REGISTRY}
 
 if [ ! -f "$APP_NAME/package.json" ]
 then
@@ -42,3 +45,4 @@ fi
 
 strapiPID=$!
 wait "$strapiPID"
+
